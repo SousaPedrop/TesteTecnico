@@ -24,6 +24,41 @@ namespace TesteTecnico
             Console.ReadKey();
         }
 
-        
+        public static void EhParteDeFibonacci()
+        {
+            Console.WriteLine("Resolvendo segunda questão: o número está na sequência de Fibonacci?");
+            Console.WriteLine("Digite um numero inteiro positivo: (máx: 1836311903)");
+            int.TryParse(Console.ReadLine(), out int numero);
+            if (numero < 0 || numero > 1836311903)
+            {
+                Console.WriteLine($"Digite um número válido.");
+            }
+            List<int> sequenciaFibonacci = new List<int>();
+            int proximoValor = 1;
+            int limite = 45;
+
+            for (int i = 0; i < limite; i++)
+            {
+                sequenciaFibonacci.Add(proximoValor);
+                if (i > 0)
+                {
+                    proximoValor = sequenciaFibonacci[i] + sequenciaFibonacci[i - 1];
+                }
+                else
+                {
+                    proximoValor = sequenciaFibonacci[i] + 1;
+                }
+            }
+            
+            if (sequenciaFibonacci.Contains(numero))
+            {
+               Console.WriteLine($"O número {numero} pertence à Sequência Fibonacci.");
+            }
+            else
+            {
+                Console.WriteLine($"O número {numero} não pertence à Sequência Fibonacci.");
+            }
+            Console.ReadKey();
+        }
     }
 }
