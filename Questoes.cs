@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace TesteTecnico
@@ -57,6 +58,27 @@ namespace TesteTecnico
             else
             {
                 Console.WriteLine($"O número {numero} não pertence à Sequência Fibonacci.");
+            }
+            Console.ReadKey();
+        }
+
+        public static void InverterString() 
+        {
+            Console.WriteLine("Digite uma entrada: ");
+            string? entrada =  Console.ReadLine();
+            if (String.IsNullOrEmpty(entrada) || String.IsNullOrWhiteSpace(entrada))
+            {
+                Console.WriteLine("Entrada nula ou em branco.");
+            }
+            else
+            {
+                var entradaInversa = new StringBuilder();
+                for (int i = entrada.Length - 1; i >= 0; i--)
+                {
+                    entradaInversa.Append(entrada[i]);
+                }
+                
+                Console.WriteLine(entradaInversa.ToString());
             }
             Console.ReadKey();
         }
